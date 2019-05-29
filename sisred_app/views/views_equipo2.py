@@ -129,7 +129,7 @@ def versiones(request):
         imagen = data['imagen']
         archivos = data['archivos']
         redId = data['redId']
-        fecha_creacion = datetime.date.today()
+        fecha_creacion = datetime.datetime.now()
         idRecursos = data['recursos']
 
         red = get_object_or_404(RED, id=redId)
@@ -247,7 +247,7 @@ def comentarioExistente(request,id_v, id_r):
         version = get_object_or_404(Version, id=id_v)
         recurso = get_object_or_404(Recurso, id=id_r)
         contenido = data['contenido']
-        fecha_creacion = datetime.date.today()
+        fecha_creacion = datetime.datetime.now()
         usuario=Perfil.objects.get(usuario__id=data['usuario'])
         idTabla = data['idTabla']
 
@@ -276,7 +276,7 @@ def comentarioNuevo(request,id_v, id_r):
         version = get_object_or_404(Version, id=id_v)
         recurso = get_object_or_404(Recurso, id=id_r)
         contenido = data['contenido']
-        fecha_creacion = datetime.date.today()
+        fecha_creacion = datetime.datetime.now()
         usuario=Perfil.objects.get(usuario__id=data['usuario'])
         x1=data['x1']
         x2=data['x2']
